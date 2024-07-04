@@ -67,10 +67,8 @@ namespace BaseCore.Collections
 				index--;
 				int newPos = rnd?.Next(0, index + 1) ?? BaseCore.Randoms.Range(0, index + 1);
 
-				T temp = list[newPos];
-				list[newPos] = list[index];
-				list[index] = temp;
-			}
+				(list[newPos], list[index]) = (list[index], list[newPos]);
+            }
 		}
 	}
 }

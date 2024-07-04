@@ -1,8 +1,10 @@
+using System;
 using BaseCore;
 using BaseCore.Collections;
 using Skills;
 using System.Collections.Generic;
 using System.Linq;
+using NetExtender.Types.Exceptions;
 using UnityEngine;
 using Upgrades;
 
@@ -40,9 +42,9 @@ public class GameManager : SingletonMonobehavior<GameManager>
 	public int ScoresPerMatch => InitialScoresPerMatch + AdditionalScoresPerMatch;
 
 	public EnumDictionary<SkillSlot, SkillModel> Skills = new EnumDictionary<SkillSlot, SkillModel>();
-
+    
 	void Awake()
-	{
+    {
 		SaveManager.Load(progress);
 		if (!progress.ProgressInitialized)
 		{
@@ -136,9 +138,8 @@ public class GameManager : SingletonMonobehavior<GameManager>
 			ShipPartType.Engine => ShipPartType.Weapon,
 			ShipPartType.Weapon => ShipPartType.Utility,
 			ShipPartType.Utility => ShipPartType.Hull,
-			_ => throw new System.NotSupportedException()
+			_ => throw new EnumUndefinedOrNotSupportedException<ShipPartType>(progress.CurrentShipPartType, nameof(progress) + "." + nameof(progress.CurrentShipPartType), null)
 		};
-
 	}
 
 	/// <summary>

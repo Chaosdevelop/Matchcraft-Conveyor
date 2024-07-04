@@ -17,11 +17,7 @@ public class EventButton : MonoBehaviour
 	void Awake()
 	{
 		button = GetComponent<Button>();
-
-		if (button != null)
-		{
-			button.onClick.AddListener(OnButtonClick);
-		}
+		button?.onClick.AddListener(OnButtonClick);
 	}
 
 	/// <summary>
@@ -29,10 +25,7 @@ public class EventButton : MonoBehaviour
 	/// </summary>
 	void OnDestroy()
 	{
-		if (button != null)
-		{
-			button.onClick.RemoveListener(OnButtonClick);
-		}
+        button?.onClick.RemoveListener(OnButtonClick);
 	}
 
 	/// <summary>
