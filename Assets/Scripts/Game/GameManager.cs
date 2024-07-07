@@ -3,7 +3,11 @@ using BaseCore;
 using BaseCore.Collections;
 using Skills;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using NetExtender.Initializer.Types.Handlers.Chain;
+using NetExtender.Types.Collections;
+using NetExtender.Types.Collections.Interfaces;
 using NetExtender.Types.Exceptions;
 using UnityEngine;
 using Upgrades;
@@ -43,8 +47,13 @@ public class GameManager : SingletonMonobehavior<GameManager>
 
 	public EnumDictionary<SkillSlot, SkillModel> Skills = new EnumDictionary<SkillSlot, SkillModel>();
     
+    IChainHandlerValue<Int32> Health = new SuppressObservableChainHandlerValue<Int32>(50);
+    
 	void Awake()
     {
+        Health.PropertyChanged += HealthOnPropertyChanged;
+        Health.Add(new DynamicChainHandler<Int32>(value => value *= 2));
+        
 		SaveManager.Load(progress);
 		if (!progress.ProgressInitialized)
 		{
@@ -61,8 +70,16 @@ public class GameManager : SingletonMonobehavior<GameManager>
 			Skills[item.Key] = item.Value.CreateSkillModel();
 		}
 	}
-
-	/// <summary>
+    
+    private void HealthOnPropertyChanged(System.Object sender, PropertyChangedEventArgs args)
+    {
+        if (sender is IChainHandlerValue<Int32> handler)
+        {
+            Debug.Log($"Health: {handler.Value}");
+        }
+    }
+    
+    /// <summary>
 	/// Initializes player progress for the first time.
 	/// </summary>
 	public void InitializeProgress()
