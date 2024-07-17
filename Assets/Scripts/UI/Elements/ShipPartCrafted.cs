@@ -6,27 +6,27 @@ using UnityEngine.UI;
 /// </summary>
 public class ShipPartCrafted : MonoBehaviour
 {
-	[SerializeField]
-	Image image;
+    [SerializeField]
+    Image image;
 
-	[SerializeField]
-	GameObject notReadyIndicator;
+    [SerializeField]
+    GameObject notReadyIndicator;
 
-	ShipPartAssemblyResult result;
+    ShipPartAssemblyResult result;
 
 
-	/// <summary>
-	/// Sets the information for the crafted ship part.
-	/// </summary>
-	/// <param name="result">The assembly result containing the ship part info.</param>
-	public void SetInfo(ShipPartAssemblyResult result)
-	{
-		this.result = result;
-		if (result.Done)
-		{
-			image.sprite = result.ShipPartInfo.Storable.Icon;
-		}
-		image.gameObject.SetActive(result.Done);
-		notReadyIndicator.SetActive(!result.Done);
-	}
+    /// <summary>
+    /// Sets the information for the crafted ship part.
+    /// </summary>
+    /// <param name="result">The assembly result containing the ship part info.</param>
+    public void SetInfo(ShipPartAssemblyResult result)
+    {
+        this.result = result;
+        if (result.Done)
+        {
+            image.sprite = result.ShipPartInfo.Data.Icon;
+        }
+        image.gameObject.SetActive(result.Done);
+        notReadyIndicator.SetActive(!result.Done);
+    }
 }

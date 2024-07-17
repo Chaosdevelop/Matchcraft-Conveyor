@@ -1,4 +1,4 @@
-using UnityEditor;
+/*using UnityEditor;
 using UnityEngine;
 
 namespace BaseCore
@@ -118,3 +118,4 @@ namespace BaseCore
 		}
 	}
 }
+*/

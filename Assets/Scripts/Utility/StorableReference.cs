@@ -1,4 +1,4 @@
-using UnityEngine;
+/*using UnityEngine;
 
 namespace BaseCore
 {
@@ -40,3 +40,4 @@ namespace BaseCore
 		}
 	}
 }
+*/

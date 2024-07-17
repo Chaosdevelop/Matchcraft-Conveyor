@@ -41,4 +41,10 @@ MonoBehaviour:
     - rid: 3525374607177023490
       type: {class: ExtraTurnsEffect, ns: Upgrades, asm: Assembly-CSharp}
       data:
-        turns: 1
+        modifier:
+          tags:
+            tagIds:
+            - id: 1
+          modifier: 1
+          order: 0
+          category: 10

@@ -1,4 +1,4 @@
-using BaseCore;
+/*using BaseCore;
 using UnityEngine;
 
 /// <summary>
@@ -32,3 +32,4 @@ public class StorableScriptableObject : ScriptableObject
 	}
 #endif
 }
+*/

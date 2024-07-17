@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
@@ -184,5 +185,54 @@ namespace BaseCore
 
             return type.IsGenericType ? type.GetGenericTypeDefinition() : type;
         }
+
+        public static ImmutableDictionary<Type, ImmutableArray<Type>> Internal { get; }
+
+        static TypeUtility()
+        {
+            ConcurrentDictionary<Type, HashSet<Type>> dictionary = new ConcurrentDictionary<Type, HashSet<Type>>();
+
+            foreach (Type type in AppDomain.CurrentDomain.GetTypes())
+            {
+                if (type.BaseType is not { } @base)
+                {
+                    continue;
+                }
+
+                HashSet<Type> set = dictionary.GetOrAdd(@base, static _ => new HashSet<Type>());
+                set.Add(@base);
+
+                if (@base.IsGenericType)
+                {
+                    set.Add(type);
+                }
+            }
+
+            Internal = dictionary.ToImmutableDictionary(static pair => pair.Key, static pair => pair.Value.ToImmutableArray());
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static IEnumerable<Type> GetTypes(this AppDomain domain)
+        {
+            if (domain is null)
+            {
+                throw new ArgumentNullException(nameof(domain));
+            }
+
+            return domain.GetAssemblies().GetTypes();
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static IEnumerable<Type> GetTypes(this IEnumerable<Assembly> assemblies)
+        {
+            if (assemblies is null)
+            {
+                throw new ArgumentNullException(nameof(assemblies));
+            }
+
+            return assemblies.SelectMany(assembly => assembly.GetTypes());
+        }
     }
+
+
 }

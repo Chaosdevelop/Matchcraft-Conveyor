@@ -41,4 +41,10 @@ MonoBehaviour:
     - rid: 6326162231424188427
       type: {class: ExtraScoresEffect, ns: Upgrades, asm: Assembly-CSharp}
       data:
-        scores: 1
+        modifier:
+          tags:
+            tagIds:
+            - id: 2
+          modifier: 1
+          order: 0
+          category: 10

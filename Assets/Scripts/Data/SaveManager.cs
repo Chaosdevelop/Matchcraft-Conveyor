@@ -1,99 +1,96 @@
-using System.IO;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using GMF;
+using GMF.Saving;
+using Microsoft.Extensions.DependencyInjection;
 using UnityEngine;
-
 /// <summary>
 /// Manages saving and loading game data.
 /// </summary>
-public class SaveManager
+/// 
+[ServiceDescriptor(ServiceLifetime.Singleton)]
+public class SaveLoadManager : ISaveLoadManager
 {
-	public static string PersonalPath = Application.persistentDataPath + Path.DirectorySeparatorChar + "GameData";
+    IDataSerializer serializer;
+    IStorageProvider storageProvider;
 
-	/// <summary>
-	/// Saves the player's progress to a file.
-	/// </summary>
-	/// <param name="playerProgress">The player progress data to save.</param>
-	public static void Save(PlayerProgress playerProgress)
-	{
-		try
-		{
-			string json = JsonUtility.ToJson(playerProgress, true);
-			SaveData("Game.save", json);
-		}
-		catch (System.Exception ex)
-		{
-			Debug.LogError(ex);
-		}
-	}
+    List<ISaveMetaData> saves = new List<ISaveMetaData>();
 
-	/// <summary>
-	/// Loads the player's progress from a file.
-	/// </summary>
-	/// <param name="playerProgress">The player progress data to load into.</param>
-	/// <returns>True if loading was successful, false otherwise.</returns>
-	public static bool Load(PlayerProgress playerProgress)
-	{
-		string json = LoadData("Game.save");
-		if (string.IsNullOrEmpty(json))
-		{
-			return false;
-		}
 
-		try
-		{
-			JsonUtility.FromJsonOverwrite(json, playerProgress);
-			return true;
-		}
-		catch (System.Exception ex)
-		{
-			Debug.LogError(ex);
-			return false;
-		}
-	}
+    public Action<ISaveData, ISaveMetaData> OnSaveLoaded { get; set; }
 
-	/// <summary>
-	/// Loads data from the specified path.
-	/// </summary>
-	/// <param name="path">The relative path to load data from.</param>
-	/// <returns>The loaded data as a string.</returns>
-	static string LoadData(string path)
-	{
-		string finalPath = Path.Combine(PersonalPath, path);
-		if (File.Exists(finalPath))
-		{
-			return File.ReadAllText(finalPath);
-		}
-		return string.Empty;
-	}
+    public static PlayerProgress CurrentSave { get; private set; }
 
-	/// <summary>
-	/// Resets the saved game data by deleting all files in the save directory.
-	/// </summary>
-	static void ResetData()
-	{
-		if (Directory.Exists(PersonalPath))
-		{
-			var files = Directory.GetFiles(PersonalPath);
-			foreach (string filepath in files)
-			{
-				File.Delete(filepath);
-			}
-		}
-	}
 
-	/// <summary>
-	/// Saves data to the specified path.
-	/// </summary>
-	/// <param name="path">The relative path to save data to.</param>
-	/// <param name="data">The data to save.</param>
-	/// <returns>True if saving was successful, false otherwise.</returns>
-	static bool SaveData(string path, string data)
-	{
-		string finalPath = Path.Combine(PersonalPath, path);
-		if (!Directory.Exists(PersonalPath))
-		{
-			Directory.CreateDirectory(PersonalPath);
-		}
-		File.WriteAllText(finalPath, data);
-		return true;
-	}
+    public void Initialize()
+    {
+        serializer = new UnityJsonDataSerializer();
+        storageProvider = new UnityLocalStorageProvider();
+        SaveSystem.Initialize(this);
+    }
+
+    public async Task SaveAsync(ISaveMetaData saveSlot)
+    {
+
+        await serializer.SerializeAsync(CurrentSave, storageProvider, saveSlot);
+        Debug.Log("SaveAsync");
+
+        saves.Add(saveSlot);
+
+    }
+
+    /*	public virtual async IAsyncEnumerable<Result> Save(IEnumerable<EditStudyLoadDisciplineCommand?> source)
+        {
+            if (source is null)
+            {
+                throw new ArgumentNullException(nameof(source));
+            }
+
+            async Task<Result> Handle(EditStudyLoadDisciplineCommand command)
+            {
+                HttpRequestException? exception = await Save(command).ConfigureAwait(false);
+                return new Result(command, exception);
+            }
+
+            List<Task<Result>> tasks = new List<Task<Result>>(source.TryGetNonEnumeratedCount(out Int32 count) ? count : 16);
+            tasks.AddRange(source.WhereNotNull().Select(Handle));
+
+            while (tasks.Count > 0)
+            {
+                Task<Result> task = await Task.WhenAny(tasks).ConfigureAwait(false);
+                tasks.Remove(task);
+                yield return await task.ConfigureAwait(false);
+            }
+        }*/
+
+    public async Task LoadAsync(ISaveMetaData saveSlot)
+    {
+        var state = new PlayerProgress();
+        CurrentSave = await serializer.DeserializeAsync(state, storageProvider, saveSlot) as PlayerProgress;
+
+        OnSaveLoaded?.Invoke(CurrentSave, saveSlot);
+
+    }
+
+    public Task<IEnumerable<ISaveMetaData>> GetAvailableSaves()
+    {
+        return Task.FromResult<IEnumerable<ISaveMetaData>>(saves);
+    }
+
+
+    public async Task AutoLoadAsync()
+    {
+        Core.Services.GetRequiredService<IGameStateManager>().ChangeState(new GameLoadingState());
+        await LoadAsync(new SimpleSaveMetaData { Path = "", Name = "Main", Date = DateTime.Now, Version = "0" });
+        Debug.Log($"AutoLoadAsync {CurrentSave}");
+
+    }
+
+    public async Task DeleteSaveSlotAsync(ISaveMetaData saveSlot)
+    {
+        await storageProvider.DeleteAsync(saveSlot.Path);
+    }
+
+
 }
