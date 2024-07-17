@@ -86,7 +86,7 @@ namespace Match3Game
         {
             totalScore = 0;
             turnsMade = 0;
-            turnsLeft = Data<PlayerData>.GetSingleton.TurnsForCraft;
+            turnsLeft = Data<PlayerData>.Singleton.TurnsForCraft;
 
             statScores[ItemStat.Durability] = new StatScoreProgress(ItemStat.Durability);
             statScores[ItemStat.Quality] = new StatScoreProgress(ItemStat.Quality);
@@ -127,7 +127,7 @@ namespace Match3Game
         {
             var count = matchInfo.MatchCount;
             var type = matchInfo.MatchType;
-            var data = Data<PlayerData>.GetSingleton;
+            var data = Data<PlayerData>.Singleton;
             var scores = data.ScoresPerMatchedChip * count;
             totalScore += scores;
 

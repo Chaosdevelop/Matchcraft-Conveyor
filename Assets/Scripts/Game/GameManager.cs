@@ -33,7 +33,7 @@ public class GameManager : SingletonMonobehavior<GameManager>
 
     void Awake()
     {
-        var statemanager = Core.Services.GetRequiredService<IGameStateManager>();
+        var statemanager = Services.GetService<IGameStateManager>();
         statemanager.OnStateChanged.Subscribe(OnLoading);
         if (statemanager.CurrentState is MainPlayState)
         {
