@@ -79,13 +79,11 @@ namespace GMF
 
         static void SendToSubscribers<T>(List<IEventSubscriber> subscribersList, T data) where T : struct, IEvent
         {
-
             var matchedSubscribers = subscribersList.ToArray();
             for (int i = 0; i < matchedSubscribers.Length; i++)
             {
                 (matchedSubscribers[i] as IEventSubscriber<T>).ReceiveEvent(data);
             }
-
         }
 
         public static void SendEvent<T>(T eventData) where T : struct, IEvent

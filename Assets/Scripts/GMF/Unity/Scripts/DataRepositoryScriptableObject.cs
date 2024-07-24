@@ -8,11 +8,19 @@ using UnityEngine;
 
 public abstract class DataRepositoryScriptableObject<T> : InstallableScriptableObject, IDataRepository<T> where T : IData
 {
-
+    public T Singleton
+    {
+        get
+        {
+            return dataList.FirstOrDefault();
+        }
+    }
+    
     public override ServiceDescriptor GetServiceDescriptor()
     {
         return new ServiceDescriptor(typeof(IDataRepository<T>), this);
     }
+    
     void OnValidate()
     {
         for (int i = 0; i < dataList.Count; i++)
@@ -21,7 +29,6 @@ public abstract class DataRepositoryScriptableObject<T> : InstallableScriptableO
             {
                 dataList[i].Id = i;
             }
-
         }
     }
 
@@ -48,9 +55,9 @@ public abstract class DataRepositoryScriptableObject<T> : InstallableScriptableO
         return dataList.FirstOrDefault(item => item.Id == id);
     }
 
-    public IEnumerable<T> GetAll()
+    public IQueryable<T> GetAll()
     {
-        return dataList;
+        return dataList.AsQueryable();
     }
 
     public async Task<T> GetByIdAsync(int id)
@@ -58,19 +65,8 @@ public abstract class DataRepositoryScriptableObject<T> : InstallableScriptableO
         return await Task.Run(() => GetById(id));
     }
 
-    public async Task<IEnumerable<T>> GetAllAsync()
+    public async Task<IQueryable<T>> GetAllAsync()
     {
         return await Task.Run(() => GetAll());
     }
-
-    public T GetSingleton()
-    {
-        return dataList.FirstOrDefault();
-    }
-
-    public async Task<T> GetSingletonAsync()
-    {
-        return await Task.Run(() => GetSingleton());
-    }
-
 }

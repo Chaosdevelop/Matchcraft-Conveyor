@@ -50,7 +50,7 @@ public class SaveLoadManager : ISaveLoadManager
 
     }
 
-    public Task<IEnumerable<ISaveMetaData>> GetAvailableSaves()
+    public Task<IEnumerable<ISaveMetaData>> GetSaves()
     {
         return Task.FromResult<IEnumerable<ISaveMetaData>>(saves);
     }
@@ -58,13 +58,13 @@ public class SaveLoadManager : ISaveLoadManager
 
     public async Task AutoLoadAsync()
     {
-        Core.Services.GetRequiredService<IGameStateManager>().ChangeState(new GameLoadingState());
+        Services.GetService<IGameStateManager>().ChangeState(new GameLoadingState());
         await LoadAsync(new SimpleSaveMetaData { Path = "", Name = "Main", Date = DateTime.Now, Version = "0" });
         Debug.Log($"AutoLoadAsync {CurrentSave}");
 
     }
 
-    public async Task DeleteSaveSlotAsync(ISaveMetaData saveSlot)
+    public async Task DeleteAsync(ISaveMetaData saveSlot)
     {
         await storageProvider.DeleteAsync(saveSlot.Path);
     }

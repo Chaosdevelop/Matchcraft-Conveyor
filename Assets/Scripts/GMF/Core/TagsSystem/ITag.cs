@@ -11,16 +11,15 @@ namespace GMF.Tags
         IEnumerable<ITag> GetSubTags();
         bool ContainsTag(ITag tag);
         IEnumerable<ITag> GetAllTags();
-
     }
 
     public interface ITagID : IEquatable<ITagID>
     {
-
     }
 
     public interface ITagsIdCollection
     {
-        public IEnumerable<ITag> GetAsTags();
+        public Int32 Count { get; }
+        public IReadOnlyCollection<ITag> GetAsTags();
     }
 }

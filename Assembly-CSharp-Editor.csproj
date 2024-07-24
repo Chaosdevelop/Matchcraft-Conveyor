@@ -102,10 +102,10 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Utility\Editor\ReadOnlyPropertyDrawer.cs" />
     <Compile Include="Assets\Scripts\Utility\Editor\StorableSOEditorManager.cs" />
-    <Compile Include="Assets\GMF\Unity\Scripts\Editor\UnityTagsRepositoryEditor.cs" />
+    <Compile Include="Assets\Scripts\GMF\Unity\Scripts\Editor\UnityTagsRepositoryEditor.cs" />
     <Compile Include="Assets\Scripts\Utility\Editor\EnumDictionaryPropertyDrawer.cs" />
+    <Compile Include="Assets\Scripts\GMF\Unity\Scripts\Editor\TagIdDrawer.cs" />
     <Compile Include="Assets\Scripts\Utility\Editor\TypeSelectorAttributeDrawer.cs" />
-    <Compile Include="Assets\GMF\Unity\Scripts\Editor\TagIdDrawer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Library\PackageCache\com.unity.collab-proxy@2.3.1\Lib\Editor\PlasticSCM\Localization\i3.zh-Hans.txt" />
