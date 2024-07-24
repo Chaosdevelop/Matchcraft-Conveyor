@@ -18,6 +18,7 @@ public class SaveLoadingState : IGameState
     public void Enter() => Debug.Log("Entering Loading State");
     public void Exit() => Debug.Log("Exiting Loading State");
 }
+
 public class StartingScreenState : IGameState
 {
     public void Enter() => Debug.Log("Entering StartingScreen State");

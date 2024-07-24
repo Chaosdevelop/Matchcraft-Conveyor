@@ -61,7 +61,7 @@ public class ShipAssemblyWindow : BaseWindow
         }
 
         shipPartPreview.SetInfo(gm.GetCurrentCraftingPart().ShipPartInfo.Data);
-        turns.text = Data<PlayerData>.GetSingleton.TurnsForCraft.CurrentValue.ToString();
+        turns.text = Data<PlayerData>.Singleton.TurnsForCraft.CurrentValue.ToString();
         totalScores.text = gm.GetTotalScores().ToString();
 
         var stats = gm.GetTotalStats();

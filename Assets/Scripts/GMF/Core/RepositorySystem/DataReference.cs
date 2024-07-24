@@ -11,18 +11,19 @@ namespace GMF.Data
         [SerializeField]
         [ReadOnly]
         int id;
-
-        public T Data {
-            get {
-                if (cached == null)
-                {
-                    cached = Data<T>.GetById(id);
-                }
-                return cached;
+        
+        public T Data
+        {
+            get
+            {
+                return cached ??= Data<T>.GetById(id);
             }
-            private set => cached = value;
+            private set
+            {
+                cached = value;
+            }
         }
-
+        
         public DataReference(T refdata)
         {
             Data = refdata;

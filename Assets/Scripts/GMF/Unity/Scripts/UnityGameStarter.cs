@@ -19,20 +19,20 @@ public class UnityGameStarter : MonoBehaviour
 
     private async void Awake()
     {
-        Core.Services.Initialize(installableScriptableObjects?.Select(arg => arg.GetServiceDescriptor()));
-        Core.Services.GetRequiredService<IGameStateManager>().ChangeState(new InitializationState());
-        Core.Services.GetRequiredService<ISaveLoadManager>().Initialize();
+        Services.Initialize(installableScriptableObjects?.Select(arg => arg.GetServiceDescriptor()));
+        Services.GetService<IGameStateManager>().ChangeState(new InitializationState());
+        Services.GetService<ISaveLoadManager>().Initialize();
         await SaveSystem.TryAutoLoadAsync();
-        Core.Services.GetRequiredService<IGameStateManager>().ChangeState(new MainPlayState());
+        Services.GetService<IGameStateManager>().ChangeState(new MainPlayState());
 
         Debug.Log($"UnityGameStarter awaited");
     }
 
     /*    private void Awake()
 		{
-			Core.Services.Initialize(installableScriptableObjects?.Select(arg => arg.GetServiceDescriptor()));
-			Core.Services.GetRequiredService<IGameStateManager>().ChangeState(new InitializationState());
-			Core.Services.GetRequiredService<ISaveLoadManager>().Initialize();
+			Services.Initialize(installableScriptableObjects?.Select(arg => arg.GetServiceDescriptor()));
+			Services.GetService<IGameStateManager>().ChangeState(new InitializationState());
+			Services.GetService<ISaveLoadManager>().Initialize();
 
 			//Task.Run(() => SaveSystem.TryAutoLoadAsync()).GetAwaiter().GetResult();
 

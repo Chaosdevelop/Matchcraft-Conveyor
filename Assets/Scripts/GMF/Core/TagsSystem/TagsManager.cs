@@ -3,7 +3,6 @@ using System.Linq;
 
 namespace GMF.Tags
 {
-
     public interface ITagRepository
     {
         ITag GetTagById(uint id);
@@ -19,7 +18,6 @@ namespace GMF.Tags
     {
         public static ITagRepository repository;
 
-
         public static void Initialize(ITagRepository repository)
         {
             TagManager.repository = repository;
@@ -27,15 +25,18 @@ namespace GMF.Tags
 
         public static void RemoveTag(string name)
         {
-            var existingITag = repository.GetTagByName(name);
-            if (existingITag != null)
-                RemoveTag(existingITag);
+            if (repository.GetTagByName(name) is { } tag)
+            {
+                RemoveTag(tag);
+            }
         }
 
         public static void RemoveTag(ITag ITag)
         {
             if (ITag != null)
+            {
                 repository.RemoveTag(ITag);
+            }
         }
 
         public static void RemoveTagFromGroup(ITag parentITag, ITag ITagToRemove)
@@ -62,20 +63,21 @@ namespace GMF.Tags
         {
             return repository.GetAllTags();
         }
+
         public static void RemoveITagFromGroups(ITag ITag)
         {
             repository.RemoveTagFromGroups(ITag);
         }
 
+        //TODO: оптимизировать
         public static bool IsSubsetOf(ITagsIdCollection thisCollection, ITagsIdCollection otherCollection)
         {
             var tags = thisCollection.GetAsTags();
             var tagsOther = otherCollection.GetAsTags();
-            bool issubset = tags.Count() != 0 && tagsOther.Count() != 0 && tagsOther.All(tagOther => tags.Any(thisTag => tagOther.ContainsTag(thisTag)));
+            bool issubset = tags.Count > 0 && tagsOther.Count > 0 && tagsOther.All(tagOther => tags.Any(tagOther.ContainsTag));
 
             // UnityEngine.Debug.Log($"issubset : {issubset}, this: {string.Join(' ', tags.Select(arg => arg.ToString()))}, other: {string.Join(' ', tagsOther.Select(arg => arg.ToString()))}");
             return issubset;
-
         }
 
     }

@@ -2,26 +2,28 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace GMF.Saving
 {
     public interface IStorageProvider
     {
+        // TODO: РїРµСЂРµРґРµР»Р°С‚СЊ РЅР° Stream
         Task SaveAsync(string path, byte[] data);
         Task<byte[]> LoadAsync(string path);
         Task DeleteAsync(string path);
-        Task<IEnumerable<string>> GetFilesAsync(string directoryPath);
+        Task<IEnumerable<string>> GetFilesAsync(string directory);
     }
 
     public interface ISaveLoadManager
     {
+        Action<ISaveData, ISaveMetaData> OnSaveLoaded { get; set; }
+        Task<IEnumerable<ISaveMetaData>> GetSaves();
         Task SaveAsync(ISaveMetaData saveSlot);
         Task LoadAsync(ISaveMetaData saveSlot);
-        Task<IEnumerable<ISaveMetaData>> GetAvailableSaves();
-        Task DeleteSaveSlotAsync(ISaveMetaData saveSlot);
         Task AutoLoadAsync();
-        Action<ISaveData, ISaveMetaData> OnSaveLoaded { get; set; }
+        Task DeleteAsync(ISaveMetaData saveSlot);
         void Initialize();
     }
 
@@ -42,22 +44,20 @@ namespace GMF.Saving
         }
     }
 
-    // Интерфейс для обеспечения сериализации данных
+    // РРЅС‚РµСЂС„РµР№СЃ РґР»СЏ РѕР±РµСЃРїРµС‡РµРЅРёСЏ СЃРµСЂРёР°Р»РёР·Р°С†РёРё РґР°РЅРЅС‹С…
     public interface IDataSerializer
     {
-        Task SerializeAsync(ISaveData data, IStorageProvider storageProvider, ISaveMetaData metaData);
-        Task<ISaveData> DeserializeAsync(ISaveData data, IStorageProvider storageProvider, ISaveMetaData metaData);
+        Task SerializeAsync(ISaveData data, IStorageProvider provider, ISaveMetaData metadata);
+        Task<ISaveData> DeserializeAsync(ISaveData data, IStorageProvider provider, ISaveMetaData metadata);
     }
 
-    // Интерфейс для хранения данных
+    // РРЅС‚РµСЂС„РµР№СЃ РґР»СЏ С…СЂР°РЅРµРЅРёСЏ РґР°РЅРЅС‹С…
     public interface ISaveData
     {
         public Dictionary<string, object> SubData { get; }
         void OnBeforeSave();
         void OnAfterLoad();
     }
-
-
 
     [Serializable]
     public struct SimpleSaveMetaData : ISaveMetaData
@@ -66,14 +66,10 @@ namespace GMF.Saving
         public string Path { get; set; }
         public DateTime Date { get; set; }
         public string Version { get; set; }
-
     }
-
-
 
     public static class SaveSystem
     {
-
         static ISaveData CurrentSaveData { get; set; }
         public static ISaveMetaData CurrentSaveSlot { get; private set; }
         public static ISaveLoadManager SaveLoadManager { get; private set; }
@@ -96,21 +92,17 @@ namespace GMF.Saving
         {
             return CurrentSaveData as T;
         }
-
-
+        
         public static Task SaveCurrentAsync()
         {
-
             return SaveLoadManager.SaveAsync(CurrentSaveSlot);
-
         }
 
         public static void SaveCurrent()
         {
-
+            new TaskFactory(CancellationToken.None, TaskCreationOptions.None, TaskContinuationOptions.None, TaskScheduler.Default).StartNew(SaveCurrentAsync).Unwrap().GetAwaiter().GetResult();
+            
             //UnityEngine.Debug.Log($"SaveCurrent {status}");
-            SaveCurrentAsync().GetAwaiter().GetResult();
-
         }
 
         public static Task TryAutoLoadAsync()
