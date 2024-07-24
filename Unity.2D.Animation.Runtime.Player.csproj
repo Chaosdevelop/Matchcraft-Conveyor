@@ -54,20 +54,48 @@
   </PropertyGroup>
   <ItemGroup>
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="G:\UnityProjects\Matchcraft-Conveyor\Assets\Packages\System.Text.Json.8.0.3\analyzers\dotnet\roslyn4.0\cs\ja\System.Text.Json.SourceGeneration.resources.dll" />
+    <Analyzer Include="G:\UnityProjects\Matchcraft-Conveyor\Assets\Packages\System.Text.Json.8.0.3\analyzers\dotnet\roslyn4.0\cs\de\System.Text.Json.SourceGeneration.resources.dll" />
+    <Analyzer Include="G:\UnityProjects\Matchcraft-Conveyor\Assets\Packages\Microsoft.Extensions.Configuration.Binder.8.0.0\analyzers\dotnet\cs\ru\Microsoft.Extensions.Configuration.Binder.SourceGeneration.resources.dll" />
+    <Analyzer Include="G:\UnityProjects\Matchcraft-Conveyor\Assets\Packages\Microsoft.Extensions.Logging.Abstractions.8.0.0\analyzers\dotnet\roslyn4.0\cs\es\Microsoft.Extensions.Logging.Generators.resources.dll" />
+    <Analyzer Include="G:\UnityProjects\Matchcraft-Conveyor\Assets\Packages\Microsoft.Extensions.Configuration.Binder.8.0.0\analyzers\dotnet\cs\pt-BR\Microsoft.Extensions.Configuration.Binder.SourceGeneration.resources.dll" />
     <Analyzer Include="G:\UnityProjects\Matchcraft-Conveyor\Assets\Packages\System.Text.Json.8.0.3\analyzers\dotnet\roslyn4.0\cs\zh-Hans\System.Text.Json.SourceGeneration.resources.dll" />
     <Analyzer Include="G:\UnityProjects\Matchcraft-Conveyor\Assets\Packages\System.Text.Json.8.0.3\analyzers\dotnet\roslyn4.0\cs\System.Text.Json.SourceGeneration.dll" />
+    <Analyzer Include="G:\UnityProjects\Matchcraft-Conveyor\Assets\Packages\Microsoft.Extensions.Configuration.Binder.8.0.0\analyzers\dotnet\cs\ja\Microsoft.Extensions.Configuration.Binder.SourceGeneration.resources.dll" />
+    <Analyzer Include="G:\UnityProjects\Matchcraft-Conveyor\Assets\Packages\Microsoft.Extensions.Logging.Abstractions.8.0.0\analyzers\dotnet\roslyn4.0\cs\it\Microsoft.Extensions.Logging.Generators.resources.dll" />
     <Analyzer Include="G:\UnityProjects\Matchcraft-Conveyor\Assets\Packages\System.Text.Json.8.0.3\analyzers\dotnet\roslyn4.0\cs\pl\System.Text.Json.SourceGeneration.resources.dll" />
+    <Analyzer Include="G:\UnityProjects\Matchcraft-Conveyor\Assets\Packages\Microsoft.Extensions.Configuration.Binder.8.0.0\analyzers\dotnet\cs\it\Microsoft.Extensions.Configuration.Binder.SourceGeneration.resources.dll" />
     <Analyzer Include="G:\UnityProjects\Matchcraft-Conveyor\Assets\Packages\System.Text.Json.8.0.3\analyzers\dotnet\roslyn4.0\cs\it\System.Text.Json.SourceGeneration.resources.dll" />
+    <Analyzer Include="G:\UnityProjects\Matchcraft-Conveyor\Assets\Packages\Microsoft.Extensions.Configuration.Binder.8.0.0\analyzers\dotnet\cs\es\Microsoft.Extensions.Configuration.Binder.SourceGeneration.resources.dll" />
+    <Analyzer Include="G:\UnityProjects\Matchcraft-Conveyor\Assets\Packages\Microsoft.Extensions.Logging.Abstractions.8.0.0\analyzers\dotnet\roslyn4.0\cs\zh-Hans\Microsoft.Extensions.Logging.Generators.resources.dll" />
+    <Analyzer Include="G:\UnityProjects\Matchcraft-Conveyor\Assets\Packages\Microsoft.Extensions.Logging.Abstractions.8.0.0\analyzers\dotnet\roslyn4.0\cs\zh-Hant\Microsoft.Extensions.Logging.Generators.resources.dll" />
+    <Analyzer Include="G:\UnityProjects\Matchcraft-Conveyor\Assets\Packages\Microsoft.Extensions.Configuration.Binder.8.0.0\analyzers\dotnet\cs\pl\Microsoft.Extensions.Configuration.Binder.SourceGeneration.resources.dll" />
+    <Analyzer Include="G:\UnityProjects\Matchcraft-Conveyor\Assets\Packages\Microsoft.Extensions.Configuration.Binder.8.0.0\analyzers\dotnet\cs\ko\Microsoft.Extensions.Configuration.Binder.SourceGeneration.resources.dll" />
+    <Analyzer Include="G:\UnityProjects\Matchcraft-Conveyor\Assets\Packages\Microsoft.Extensions.Logging.Abstractions.8.0.0\analyzers\dotnet\roslyn4.0\cs\de\Microsoft.Extensions.Logging.Generators.resources.dll" />
+    <Analyzer Include="G:\UnityProjects\Matchcraft-Conveyor\Assets\Packages\Microsoft.Extensions.Configuration.Binder.8.0.0\analyzers\dotnet\cs\Microsoft.Extensions.Configuration.Binder.SourceGeneration.dll" />
     <Analyzer Include="G:\UnityProjects\Matchcraft-Conveyor\Assets\Packages\System.Text.Json.8.0.3\analyzers\dotnet\roslyn4.0\cs\tr\System.Text.Json.SourceGeneration.resources.dll" />
+    <Analyzer Include="G:\UnityProjects\Matchcraft-Conveyor\Assets\Packages\Microsoft.Extensions.Logging.Abstractions.8.0.0\analyzers\dotnet\roslyn4.0\cs\tr\Microsoft.Extensions.Logging.Generators.resources.dll" />
+    <Analyzer Include="G:\UnityProjects\Matchcraft-Conveyor\Assets\Packages\Microsoft.Extensions.Logging.Abstractions.8.0.0\analyzers\dotnet\roslyn4.0\cs\ja\Microsoft.Extensions.Logging.Generators.resources.dll" />
+    <Analyzer Include="G:\UnityProjects\Matchcraft-Conveyor\Assets\Packages\Microsoft.Extensions.Configuration.Binder.8.0.0\analyzers\dotnet\cs\fr\Microsoft.Extensions.Configuration.Binder.SourceGeneration.resources.dll" />
+    <Analyzer Include="G:\UnityProjects\Matchcraft-Conveyor\Assets\Packages\Microsoft.Extensions.Logging.Abstractions.8.0.0\analyzers\dotnet\roslyn4.0\cs\ru\Microsoft.Extensions.Logging.Generators.resources.dll" />
+    <Analyzer Include="G:\UnityProjects\Matchcraft-Conveyor\Assets\Packages\Microsoft.Extensions.Configuration.Binder.8.0.0\analyzers\dotnet\cs\zh-Hant\Microsoft.Extensions.Configuration.Binder.SourceGeneration.resources.dll" />
+    <Analyzer Include="G:\UnityProjects\Matchcraft-Conveyor\Assets\Packages\Microsoft.Extensions.Logging.Abstractions.8.0.0\analyzers\dotnet\roslyn4.0\cs\pt-BR\Microsoft.Extensions.Logging.Generators.resources.dll" />
+    <Analyzer Include="G:\UnityProjects\Matchcraft-Conveyor\Assets\Packages\Microsoft.Extensions.Configuration.Binder.8.0.0\analyzers\dotnet\cs\zh-Hans\Microsoft.Extensions.Configuration.Binder.SourceGeneration.resources.dll" />
+    <Analyzer Include="G:\UnityProjects\Matchcraft-Conveyor\Assets\Packages\Microsoft.Extensions.Logging.Abstractions.8.0.0\analyzers\dotnet\roslyn4.0\cs\pl\Microsoft.Extensions.Logging.Generators.resources.dll" />
+    <Analyzer Include="G:\UnityProjects\Matchcraft-Conveyor\Assets\Packages\Microsoft.Extensions.Logging.Abstractions.8.0.0\analyzers\dotnet\roslyn4.0\cs\ko\Microsoft.Extensions.Logging.Generators.resources.dll" />
     <Analyzer Include="G:\UnityProjects\Matchcraft-Conveyor\Assets\Packages\System.Text.Json.8.0.3\analyzers\dotnet\roslyn4.0\cs\pt-BR\System.Text.Json.SourceGeneration.resources.dll" />
+    <Analyzer Include="G:\UnityProjects\Matchcraft-Conveyor\Assets\Packages\Microsoft.Extensions.Logging.Abstractions.8.0.0\analyzers\dotnet\roslyn4.0\cs\cs\Microsoft.Extensions.Logging.Generators.resources.dll" />
+    <Analyzer Include="G:\UnityProjects\Matchcraft-Conveyor\Assets\Packages\Microsoft.Extensions.Logging.Abstractions.8.0.0\analyzers\dotnet\roslyn4.0\cs\fr\Microsoft.Extensions.Logging.Generators.resources.dll" />
+    <Analyzer Include="G:\UnityProjects\Matchcraft-Conveyor\Assets\Packages\Microsoft.Extensions.Configuration.Binder.8.0.0\analyzers\dotnet\cs\cs\Microsoft.Extensions.Configuration.Binder.SourceGeneration.resources.dll" />
     <Analyzer Include="G:\UnityProjects\Matchcraft-Conveyor\Assets\Packages\System.Text.Json.8.0.3\analyzers\dotnet\roslyn4.0\cs\ru\System.Text.Json.SourceGeneration.resources.dll" />
     <Analyzer Include="G:\UnityProjects\Matchcraft-Conveyor\Assets\Packages\System.Text.Json.8.0.3\analyzers\dotnet\roslyn4.0\cs\zh-Hant\System.Text.Json.SourceGeneration.resources.dll" />
     <Analyzer Include="G:\UnityProjects\Matchcraft-Conveyor\Assets\Packages\System.Text.Json.8.0.3\analyzers\dotnet\roslyn4.0\cs\ko\System.Text.Json.SourceGeneration.resources.dll" />
+    <Analyzer Include="G:\UnityProjects\Matchcraft-Conveyor\Assets\Packages\Microsoft.Extensions.Configuration.Binder.8.0.0\analyzers\dotnet\cs\de\Microsoft.Extensions.Configuration.Binder.SourceGeneration.resources.dll" />
     <Analyzer Include="G:\UnityProjects\Matchcraft-Conveyor\Assets\Packages\System.Text.Json.8.0.3\analyzers\dotnet\roslyn4.0\cs\cs\System.Text.Json.SourceGeneration.resources.dll" />
     <Analyzer Include="G:\UnityProjects\Matchcraft-Conveyor\Assets\Packages\System.Text.Json.8.0.3\analyzers\dotnet\roslyn4.0\cs\es\System.Text.Json.SourceGeneration.resources.dll" />
     <Analyzer Include="G:\UnityProjects\Matchcraft-Conveyor\Assets\Packages\System.Text.Json.8.0.3\analyzers\dotnet\roslyn4.0\cs\fr\System.Text.Json.SourceGeneration.resources.dll" />
-    <Analyzer Include="G:\UnityProjects\Matchcraft-Conveyor\Assets\Packages\System.Text.Json.8.0.3\analyzers\dotnet\roslyn4.0\cs\ja\System.Text.Json.SourceGeneration.resources.dll" />
-    <Analyzer Include="G:\UnityProjects\Matchcraft-Conveyor\Assets\Packages\System.Text.Json.8.0.3\analyzers\dotnet\roslyn4.0\cs\de\System.Text.Json.SourceGeneration.resources.dll" />
+    <Analyzer Include="G:\UnityProjects\Matchcraft-Conveyor\Assets\Packages\Microsoft.Extensions.Logging.Abstractions.8.0.0\analyzers\dotnet\roslyn4.0\cs\Microsoft.Extensions.Logging.Generators.dll" />
+    <Analyzer Include="G:\UnityProjects\Matchcraft-Conveyor\Assets\Packages\Microsoft.Extensions.Configuration.Binder.8.0.0\analyzers\dotnet\cs\tr\Microsoft.Extensions.Configuration.Binder.SourceGeneration.resources.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.9f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.SourceGenerators.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.9f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
@@ -300,8 +328,14 @@
     <Reference Include="ReactiveProperty">
       <HintPath>Assets\Packages\ReactiveProperty.9.5.0\lib\netstandard2.0\ReactiveProperty.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Extensions.Logging">
+      <HintPath>Assets\Packages\Microsoft.Extensions.Logging.8.0.0\lib\netstandard2.1\Microsoft.Extensions.Logging.dll</HintPath>
+    </Reference>
     <Reference Include="ReactiveProperty.Core">
       <HintPath>Assets\Packages\ReactiveProperty.Core.9.5.0\lib\netstandard2.0\ReactiveProperty.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.EventLog">
+      <HintPath>Assets\Packages\System.Diagnostics.EventLog.8.0.0\lib\netstandard2.0\System.Diagnostics.EventLog.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Collections.LowLevel.ILSupport">
       <HintPath>Library\PackageCache\com.unity.collections@1.2.4\Unity.Collections.LowLevel.ILSupport\Unity.Collections.LowLevel.ILSupport.dll</HintPath>
@@ -309,20 +343,47 @@
     <Reference Include="Microsoft.Bcl.TimeProvider">
       <HintPath>Assets\Packages\Microsoft.Bcl.TimeProvider.8.0.0\lib\netstandard2.0\Microsoft.Bcl.TimeProvider.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.EventSource">
+      <HintPath>Assets\Packages\Microsoft.Extensions.Logging.EventSource.8.0.0\lib\netstandard2.0\Microsoft.Extensions.Logging.EventSource.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives">
+      <HintPath>Assets\Packages\Microsoft.Extensions.Primitives.8.0.0\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileSystemGlobbing">
+      <HintPath>Assets\Packages\Microsoft.Extensions.FileSystemGlobbing.8.0.0\lib\netstandard2.0\Microsoft.Extensions.FileSystemGlobbing.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.Annotations">
       <HintPath>Assets\Packages\System.ComponentModel.Annotations.5.0.0\lib\netstandard2.1\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Diagnostics.Abstractions">
+      <HintPath>Assets\Packages\Microsoft.Extensions.Diagnostics.Abstractions.8.0.0\lib\netstandard2.0\Microsoft.Extensions.Diagnostics.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Extensions.DependencyInjection">
       <HintPath>Assets\Packages\Microsoft.Extensions.DependencyInjection.8.0.0\lib\netstandard2.1\Microsoft.Extensions.DependencyInjection.dll</HintPath>
     </Reference>
+    <Reference Include="System.Diagnostics.DiagnosticSource">
+      <HintPath>Assets\Packages\System.Diagnostics.DiagnosticSource.8.0.0\lib\netstandard2.0\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces">
       <HintPath>Assets\Packages\Microsoft.Bcl.AsyncInterfaces.8.0.0\lib\netstandard2.1\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Json">
+      <HintPath>Assets\Packages\Microsoft.Extensions.Configuration.Json.8.0.0\lib\netstandard2.1\Microsoft.Extensions.Configuration.Json.dll</HintPath>
     </Reference>
     <Reference Include="Scrutor">
       <HintPath>Assets\Packages\Scrutor.4.2.2\lib\netstandard2.0\Scrutor.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Extensions.Hosting">
+      <HintPath>Assets\Packages\Microsoft.Extensions.Hosting.8.0.0\lib\netstandard2.1\Microsoft.Extensions.Hosting.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options.ConfigurationExtensions">
+      <HintPath>Assets\Packages\Microsoft.Extensions.Options.ConfigurationExtensions.8.0.0\lib\netstandard2.0\Microsoft.Extensions.Options.ConfigurationExtensions.dll</HintPath>
+    </Reference>
     <Reference Include="DOTween">
       <HintPath>Assets\Plugins\DOTween\DOTween.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration">
+      <HintPath>Assets\Packages\Microsoft.Extensions.Configuration.8.0.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.dll</HintPath>
     </Reference>
     <Reference Include="System.Reactive.Interfaces">
       <HintPath>Assets\Packages\System.Reactive.Interfaces.6.0.1\lib\netstandard2.0\System.Reactive.Interfaces.dll</HintPath>
@@ -342,14 +403,38 @@
     <Reference Include="System.Runtime.CompilerServices.Unsafe">
       <HintPath>Assets\Packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.EventLog">
+      <HintPath>Assets\Packages\Microsoft.Extensions.Logging.EventLog.8.0.0\lib\netstandard2.0\Microsoft.Extensions.Logging.EventLog.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Binder">
+      <HintPath>Assets\Packages\Microsoft.Extensions.Configuration.Binder.8.0.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.Binder.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Debug">
+      <HintPath>Assets\Packages\Microsoft.Extensions.Logging.Debug.8.0.0\lib\netstandard2.0\Microsoft.Extensions.Logging.Debug.dll</HintPath>
+    </Reference>
     <Reference Include="DynamicData">
       <HintPath>Assets\Packages\DynamicData.8.4.1\lib\netstandard2.0\DynamicData.dll</HintPath>
     </Reference>
     <Reference Include="Splat">
       <HintPath>Assets\Packages\Splat.15.1.1\lib\netstandard2.0\Splat.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Extensions.Options">
+      <HintPath>Assets\Packages\Microsoft.Extensions.Options.8.0.0\lib\netstandard2.1\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.UserSecrets">
+      <HintPath>Assets\Packages\Microsoft.Extensions.Configuration.UserSecrets.8.0.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.UserSecrets.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileProviders.Abstractions">
+      <HintPath>Assets\Packages\Microsoft.Extensions.FileProviders.Abstractions.8.0.0\lib\netstandard2.0\Microsoft.Extensions.FileProviders.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.EnvironmentVariables">
+      <HintPath>Assets\Packages\Microsoft.Extensions.Configuration.EnvironmentVariables.8.0.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.EnvironmentVariables.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.9.0\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows">
+      <HintPath>Assets\Packages\System.Security.Principal.Windows.5.0.0\lib\netstandard2.0\System.Security.Principal.Windows.dll</HintPath>
     </Reference>
     <Reference Include="ReactiveUI">
       <HintPath>Assets\Packages\ReactiveUI.20.1.1\lib\netstandard2.0\ReactiveUI.dll</HintPath>
@@ -357,8 +442,17 @@
     <Reference Include="System.Threading.Channels">
       <HintPath>Assets\Packages\System.Threading.Channels.8.0.0\lib\netstandard2.1\System.Threading.Channels.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.FileExtensions">
+      <HintPath>Assets\Packages\Microsoft.Extensions.Configuration.FileExtensions.8.0.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.FileExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileProviders.Physical">
+      <HintPath>Assets\Packages\Microsoft.Extensions.FileProviders.Physical.8.0.0\lib\netstandard2.0\Microsoft.Extensions.FileProviders.Physical.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.2.1\Runtime\AOT\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Hosting.Abstractions">
+      <HintPath>Assets\Packages\Microsoft.Extensions.Hosting.Abstractions.8.0.0\lib\netstandard2.1\Microsoft.Extensions.Hosting.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="System.Reactive.Core">
       <HintPath>Assets\Packages\System.Reactive.Core.6.0.1\lib\netstandard2.0\System.Reactive.Core.dll</HintPath>
@@ -366,11 +460,29 @@
     <Reference Include="System.Text.Json">
       <HintPath>Assets\Packages\System.Text.Json.8.0.3\lib\netstandard2.0\System.Text.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions">
+      <HintPath>Assets\Packages\Microsoft.Extensions.Configuration.Abstractions.8.0.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+    </Reference>
     <Reference Include="System.Collections.Immutable">
       <HintPath>Assets\Packages\System.Collections.Immutable.8.0.0\lib\netstandard2.0\System.Collections.Immutable.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Configuration">
+      <HintPath>Assets\Packages\Microsoft.Extensions.Logging.Configuration.8.0.0\lib\netstandard2.0\Microsoft.Extensions.Logging.Configuration.dll</HintPath>
+    </Reference>
     <Reference Include="System.Reactive.Linq">
       <HintPath>Assets\Packages\System.Reactive.Linq.6.0.1\lib\netstandard2.0\System.Reactive.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.CommandLine">
+      <HintPath>Assets\Packages\Microsoft.Extensions.Configuration.CommandLine.8.0.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.CommandLine.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions">
+      <HintPath>Assets\Packages\Microsoft.Extensions.Logging.Abstractions.8.0.0\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Diagnostics">
+      <HintPath>Assets\Packages\Microsoft.Extensions.Diagnostics.8.0.0\lib\netstandard2.0\Microsoft.Extensions.Diagnostics.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Console">
+      <HintPath>Assets\Packages\Microsoft.Extensions.Logging.Console.8.0.0\lib\netstandard2.0\Microsoft.Extensions.Logging.Console.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.9f1\Editor\Data\NetStandard\ref\2.1.0\netstandard.dll</HintPath>

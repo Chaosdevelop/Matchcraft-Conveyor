@@ -40,29 +40,6 @@ public class SaveLoadManager : ISaveLoadManager
 
     }
 
-    /*	public virtual async IAsyncEnumerable<Result> Save(IEnumerable<EditStudyLoadDisciplineCommand?> source)
-        {
-            if (source is null)
-            {
-                throw new ArgumentNullException(nameof(source));
-            }
-
-            async Task<Result> Handle(EditStudyLoadDisciplineCommand command)
-            {
-                HttpRequestException? exception = await Save(command).ConfigureAwait(false);
-                return new Result(command, exception);
-            }
-
-            List<Task<Result>> tasks = new List<Task<Result>>(source.TryGetNonEnumeratedCount(out Int32 count) ? count : 16);
-            tasks.AddRange(source.WhereNotNull().Select(Handle));
-
-            while (tasks.Count > 0)
-            {
-                Task<Result> task = await Task.WhenAny(tasks).ConfigureAwait(false);
-                tasks.Remove(task);
-                yield return await task.ConfigureAwait(false);
-            }
-        }*/
 
     public async Task LoadAsync(ISaveMetaData saveSlot)
     {

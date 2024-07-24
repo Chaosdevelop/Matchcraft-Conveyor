@@ -107,10 +107,9 @@ namespace GMF.Saving
 
         public static void SaveCurrent()
         {
+            // new TaskFactory(CancellationToken.None, TaskCreationOptions.None, TaskContinuationOptions.None, TaskScheduler.Default).StartNew(SaveCurrentAsync).Unwrap().GetAwaiter().GetResult();
 
-            //UnityEngine.Debug.Log($"SaveCurrent {status}");
-            SaveCurrentAsync().GetAwaiter().GetResult();
-
+            Task.Run(SaveCurrentAsync).GetAwaiter().GetResult();
         }
 
         public static Task TryAutoLoadAsync()

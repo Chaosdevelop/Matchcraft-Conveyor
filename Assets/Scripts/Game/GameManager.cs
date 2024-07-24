@@ -11,8 +11,6 @@ using Skills;
 using UnityEngine;
 using Upgrades;
 
-
-
 /// <summary>
 /// Manages the overall game state and player progress.
 /// </summary>
@@ -39,7 +37,6 @@ public class GameManager : SingletonMonobehavior<GameManager>
         {
             OnLoading(statemanager.CurrentState);
         }
-
     }
 
 
